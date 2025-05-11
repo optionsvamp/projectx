@@ -1,4 +1,4 @@
-package projectx
+package github.com/optionsvamp/projectx
 
 import "time"
 
