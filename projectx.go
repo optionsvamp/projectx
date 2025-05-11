@@ -49,17 +49,15 @@ func (c *Client) GetContractByID(contractID string) (*Contract, error) {
 	req := struct {
 		ContractID string `json:"contractId"`
 	}{ContractID: contractID}
-	var resp ContractSearchResponse
+
+	var resp ContractSingleResponse
 	if err := c.doRequest("POST", "/api/contract/searchById", req, &resp); err != nil {
 		return nil, err
 	}
 	if !resp.Success {
 		return nil, fmt.Errorf("contract search by ID failed: %s", resp.ErrorMessage)
 	}
-	if len(resp.Contracts) == 0 {
-		return nil, fmt.Errorf("no contract found with ID: %s", contractID)
-	}
-	return &resp.Contracts[0], nil
+	return &resp.Contract, nil
 }
 
 func (c *Client) PlaceOrder(order OrderRequest) (*OrderResponse, error) {

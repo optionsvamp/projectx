@@ -53,6 +53,13 @@ type ContractSearchResponse struct {
 	ErrorMessage string     `json:"errorMessage"`
 }
 
+type ContractSingleResponse struct {
+	Contract     Contract `json:"contract"`
+	Success      bool     `json:"success"`
+	ErrorCode    int      `json:"errorCode"`
+	ErrorMessage string   `json:"errorMessage"`
+}
+
 type OrderRequest struct {
 	AccountID     int      `json:"accountId"`
 	ContractID    string   `json:"contractId"`
