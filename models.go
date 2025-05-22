@@ -195,6 +195,6 @@ const (
 )
 
 const (
-	OrderSideBid = 0
-	OrderSideAsk = 1
+	OrderSideBidBuy  = 0
+	OrderSideAskSell = 1
 )
