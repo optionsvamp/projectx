@@ -183,3 +183,18 @@ var TimeUnitName = map[int]string{
 	TimeUnitWeek:   "Week",
 	TimeUnitMonth:  "Month",
 }
+
+// Order constants
+const (
+	OrderTypeLimit        = 1
+	OrderTypeMarket       = 2
+	OrderTypeStop         = 4
+	OrderTypeTrailingStop = 5
+	OrderTypeJoinBid      = 6
+	OrderTypeJoinAsk      = 7
+)
+
+const (
+	OrderSideBid = 0
+	OrderSideAsk = 1
+)
