@@ -198,3 +198,8 @@ const (
 	OrderSideBidBuy  = 0
 	OrderSideAskSell = 1
 )
+
+const (
+	PositionTypeLong  = 1
+	PositionTypeShort = 2
+)
