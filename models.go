@@ -203,3 +203,17 @@ const (
 	PositionTypeLong  = 1
 	PositionTypeShort = 2
 )
+
+const (
+	PlaceOrderSuccess             = 0
+	PlaceOrderAccountNotFound     = 1
+	PlaceOrderOrderRejected       = 2
+	PlaceOrderInsufficientFunds   = 3
+	PlaceOrderAccountViolation    = 4
+	PlaceOrderOutsideTradingHours = 5
+	PlaceOrderOrderPending        = 6
+	PlaceOrderUnknownError        = 7
+	PlaceOrderContractNotFound    = 8
+	PlaceOrderContractNotActive   = 9
+	PlaceOrderAccountRejected     = 10
+)

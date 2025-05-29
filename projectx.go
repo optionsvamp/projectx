@@ -66,7 +66,7 @@ func (c *Client) PlaceOrder(order OrderRequest) (*OrderResponse, error) {
 		return nil, err
 	}
 	if !resp.Success {
-		return nil, fmt.Errorf("order failed: %s", resp.ErrorMessage)
+		return &resp, fmt.Errorf("order failed: %s", resp.ErrorMessage)
 	}
 	return &resp, nil
 }
