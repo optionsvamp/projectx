@@ -193,6 +193,9 @@ func (c *Client) GetHistoricalBars(req HistoryRequest) ([]HistoryBar, error) {
 		return nil, err
 	}
 	if !resp.Success {
+		if len(resp.ErrorMessage) == 0 {
+			return nil, fmt.Errorf("historical data request failed: code = %d", resp.ErrorCode)
+		}
 		return nil, fmt.Errorf("historical data request failed: %s", resp.ErrorMessage)
 	}
 	return resp.Bars, nil
