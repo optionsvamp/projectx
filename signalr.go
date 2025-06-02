@@ -47,7 +47,7 @@ func NewSignalRClient(jwtToken string, marketHandler MarketDataHandler) (*Signal
 	}
 
 	// Configure the SignalR hub URL
-	hubURL := "wss://rtc.thefuturesdesk.projectx.com/hubs/market"
+	hubURL := "https://rtc.thefuturesdesk.projectx.com/hubs/market"
 	parsedURL, err := url.Parse(hubURL)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse hub URL: %v", err)
