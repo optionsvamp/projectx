@@ -26,6 +26,10 @@ func NewClient(baseURL string) *Client {
 	}
 }
 
+func (c *Client) GetToken() string {
+	return c.Token
+}
+
 // WithAutoRetry allows the client to retry on 401 Unauthorized by calling the provided auth function.
 func (c *Client) WithAutoRetry(authFn func() error) *Client {
 	c.authFunc = authFn
