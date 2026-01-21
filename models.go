@@ -37,6 +37,10 @@ type ContractSearchRequest struct {
 	SearchText string `json:"searchText"`
 }
 
+type ContractAvailableRequest struct {
+	Live bool `json:"live"`
+}
+
 type Contract struct {
 	ID             string  `json:"id"`
 	Name           string  `json:"name"`
@@ -44,6 +48,7 @@ type Contract struct {
 	TickSize       float64 `json:"tickSize"`
 	TickValue      float64 `json:"tickValue"`
 	ActiveContract bool    `json:"activeContract"`
+	SymbolID       string  `json:"symbolId,omitempty"`
 }
 
 type ContractSearchResponse struct {

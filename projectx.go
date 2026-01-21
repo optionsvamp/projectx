@@ -60,6 +60,18 @@ func (c *Client) GetContractByID(contractID string) (*Contract, error) {
 	return &resp.Contract, nil
 }
 
+func (c *Client) GetAvailableContracts(live bool) ([]Contract, error) {
+	req := ContractAvailableRequest{Live: live}
+	var resp ContractSearchResponse
+	if err := c.doRequest("POST", "/api/Contract/available", req, &resp); err != nil {
+		return nil, err
+	}
+	if !resp.Success {
+		return nil, fmt.Errorf("available contracts request failed: %s", resp.ErrorMessage)
+	}
+	return resp.Contracts, nil
+}
+
 func (c *Client) PlaceOrder(order OrderRequest) (*OrderResponse, error) {
 	var resp OrderResponse
 	if err := c.doRequest("POST", "/api/order/place", order, &resp); err != nil {
